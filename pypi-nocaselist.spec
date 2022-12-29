@@ -4,7 +4,7 @@
 #
 Name     : pypi-nocaselist
 Version  : 1.0.6
-Release  : 29
+Release  : 30
 URL      : https://files.pythonhosted.org/packages/19/73/c53ec3d867102bec9363b1d1c6ed21396720b6126f963436a08c512d982d/nocaselist-1.0.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/19/73/c53ec3d867102bec9363b1d1c6ed21396720b6126f963436a08c512d982d/nocaselist-1.0.6.tar.gz
 Summary  : A case-insensitive list for Python
@@ -14,6 +14,9 @@ Requires: pypi-nocaselist-license = %{version}-%{release}
 Requires: pypi-nocaselist-python = %{version}-%{release}
 Requires: pypi-nocaselist-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 nocaselist - A case-insensitive list for Python
@@ -58,15 +61,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1659647747
+export SOURCE_DATE_EPOCH=1672293245
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -83,7 +86,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-nocaselist
-cp %{_builddir}/nocaselist-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-nocaselist/7df059597099bb7dcf25d2a9aedfaf4465f72d8d
+cp %{_builddir}/nocaselist-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-nocaselist/7df059597099bb7dcf25d2a9aedfaf4465f72d8d || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
