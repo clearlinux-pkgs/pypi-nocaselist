@@ -1,5 +1,5 @@
 PKG_NAME := pypi-nocaselist
-URL = https://files.pythonhosted.org/packages/5e/7a/dc9f3fc17e2fef0e94365307d9068a9dda667a2e7821b09282148c5d2a05/nocaselist-2.0.1.tar.gz
+URL = https://files.pythonhosted.org/packages/72/dc/79d2d3462e6a71c560cbbd9a7b639d9923caad4f76e0009534eee3e7473d/nocaselist-2.0.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common

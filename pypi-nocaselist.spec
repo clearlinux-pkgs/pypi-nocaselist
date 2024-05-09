@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : pypi-nocaselist
-Version  : 2.0.1
-Release  : 37
-URL      : https://files.pythonhosted.org/packages/5e/7a/dc9f3fc17e2fef0e94365307d9068a9dda667a2e7821b09282148c5d2a05/nocaselist-2.0.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/5e/7a/dc9f3fc17e2fef0e94365307d9068a9dda667a2e7821b09282148c5d2a05/nocaselist-2.0.1.tar.gz
+Version  : 2.0.2
+Release  : 38
+URL      : https://files.pythonhosted.org/packages/72/dc/79d2d3462e6a71c560cbbd9a7b639d9923caad4f76e0009534eee3e7473d/nocaselist-2.0.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/72/dc/79d2d3462e6a71c560cbbd9a7b639d9923caad4f76e0009534eee3e7473d/nocaselist-2.0.2.tar.gz
 Summary  : A case-insensitive list for Python
 Group    : Development/Tools
 License  : Apache-2.0
@@ -57,10 +57,10 @@ python3 components for the pypi-nocaselist package.
 
 
 %prep
-%setup -q -n nocaselist-2.0.1
-cd %{_builddir}/nocaselist-2.0.1
+%setup -q -n nocaselist-2.0.2
+cd %{_builddir}/nocaselist-2.0.2
 pushd ..
-cp -a nocaselist-2.0.1 buildavx2
+cp -a nocaselist-2.0.2 buildavx2
 popd
 
 %build
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1715015351
+export SOURCE_DATE_EPOCH=1715214237
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
