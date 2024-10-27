@@ -7,7 +7,7 @@
 #
 Name     : pypi-nocaselist
 Version  : 2.0.3
-Release  : 39
+Release  : 40
 URL      : https://files.pythonhosted.org/packages/cf/2e/4e7381b5552f530fa60f604a47bec08fe285bd3a4ee800cccdccfd978fa4/nocaselist-2.0.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cf/2e/4e7381b5552f530fa60f604a47bec08fe285bd3a4ee800cccdccfd978fa4/nocaselist-2.0.3.tar.gz
 Summary  : A case-insensitive list for Python
